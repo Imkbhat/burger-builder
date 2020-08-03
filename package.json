@@ -65,7 +65,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+   "deploy": "npm run cleanup && gh-pages -d build -b deploy -e build",
+    "cleanup": "rm -rf node_modules/gh-pages/.cache"
   },
   "eslintConfig": {
     "extends": "react-app"
